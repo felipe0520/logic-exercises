@@ -42,6 +42,45 @@ const index = (array: number[]): {} => {
     multiplication: multiplicationInArray(array),
   });
 };
-const response = index(array);
+// const response = index(array);
 
-console.log(response);
+/*
+Letra B: aça uma função que receba um array de números e 
+devolve um objeto que contenha as informações: maior número e menor número 
+ */
+
+type greaterAndLesserArray = {
+  greater: number;
+  lesser: number;
+};
+
+const greaterNumber = (numbers: number[]) => {
+  let greater = numbers[0];
+
+  for (let i of numbers) {
+    if (i > greater) {
+      greater = i;
+    }
+  }
+  return greater;
+};
+
+const lesserNumber = (numbers: number[]) => {
+  let lesser = numbers[0];
+
+  for (let i of numbers) {
+    if (i < lesser) {
+      lesser = i;
+    }
+  }
+  return lesser;
+};
+
+const verifyArray = (numbers: number[]): greaterAndLesserArray => {
+  return {
+    greater: greaterNumber(numbers),
+    lesser: lesserNumber(numbers),
+  };
+};
+
+console.log(verifyArray(array));
