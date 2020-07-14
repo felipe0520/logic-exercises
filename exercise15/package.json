@@ -1,0 +1,21 @@
+{
+  "name": "exercise-8",
+  "version": "1.0.0",
+  "description": "exercícios de lógica",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "start": "tsc && node ./build/src/index.js"
+  },
+  "author": "Felioe",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.2"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}
