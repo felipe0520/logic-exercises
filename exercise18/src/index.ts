@@ -8,24 +8,21 @@ export const sumNumberArray = (
   target: number
 ): number[] | undefined => {
   let response: number[] = [];
-  let index = 0;
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[0] + arr[i] === target) {
-      response = [0, i];
+    let result = target - arr[i];
+
+    if (arr.indexOf(result) !== -1) {
+      response = [i, arr.indexOf(result)];
       response.sort();
-      return response;
-    } else {
-      index++;
-      for (let i = index; i < arr.length; i++) {
-        if (arr[index] + arr[i] === target) {
-          response = [i, index];
-          response.sort();
-          return response;
-        }
-      }
     }
   }
 
   return response;
 };
+
+const nums = [2, 7, 11, 15];
+const target = 9;
+const result = sumNumberArray(nums, target);
+
+console.log(result);
